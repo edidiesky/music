@@ -77,7 +77,7 @@ const Content: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="flex w-100 column gap-2">
+        {/* <div className="flex w-100 column gap-2">
           <div className="content_center flex column gap-2">
             <div className="w-90 auto py-2 flex column gap-2">
               <h3 className="fs-24 text-extra-bold">Focus</h3>
@@ -103,8 +103,8 @@ const Content: React.FC = () => {
                       >
                         {x.text}
                         <span
-                          style={{ fontSize: "13px", lineHeight: "1.5" }}
-                          className="block subtext py-1 text-light text-grey"
+                          style={{ fontSize: "13px", marginTop: "7px" }}
+                          className="block subtext text-bold text-grey"
                         >
                           {x.subtext.substring(0, 34)}...
                         </span>
@@ -115,7 +115,7 @@ const Content: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="flex w-100 column gap-2">
           <div className="content_center flex column gap-2">
             <div className="w-90 auto py-2 flex column gap-2">
@@ -142,8 +142,8 @@ const Content: React.FC = () => {
                       >
                         {x.text}
                         <span
-                          style={{ fontSize: "13px", lineHeight: "1.5" }}
-                          className="block subtext py-1 text-light text-grey"
+                          style={{ fontSize: "13px", marginTop:"7px"}}
+                          className="block subtext text-bold text-grey"
                         >
                           {x.subtext.substring(0, 34)}...
                         </span>
@@ -221,7 +221,7 @@ const ContentStyles = styled.div`
     background-color: var(--grey-3) !important;
   }
   .content_card {
-    padding: 2rem 1.5rem;
+    padding: 1.3rem 1.5rem;
     background-color: var(--dark-grey);
     transition: all 0.4s ease;
     border-radius: 6px;
