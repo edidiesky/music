@@ -3,10 +3,18 @@ import React from "react";
 import styled from "styled-components";
 import LeftSidebar from "../common/leftsidebar";
 import Content from "./content/Content";
+import MyAnimatePresence from "../utils/AnimatePresence";
+import AccountModal from "../modals/AccountModal";
 
 const HomeIndex: React.FC = () => {
+  const [accountmodal, setAccountModal] = React.useState<boolean>(true)
   return (
     <HomeWrapperStyles className="w-100 flex column gap-1">
+
+      <MyAnimatePresence
+      >
+        {accountmodal && <AccountModal modal={accountmodal} setModal={setAccountModal} />}
+      </MyAnimatePresence>
       <HomeStyles className="w-100">
         <div className="home_wrapper w-100">
           <LeftSidebar />

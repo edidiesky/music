@@ -5,7 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: false,
   images: {
-    domains: ["avada.website", "kalanidhithemes.com"],
+    domains: ["avada.website", "kalanidhithemes.com","i.scdn.co"],
     formats: ["image/avif", "image/webp"],
   },
   // webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
