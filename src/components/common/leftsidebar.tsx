@@ -58,7 +58,7 @@ const LeftSidebar: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="center_content w-100 flex column gap-2">
+            {/* <div className="center_content w-100 flex column gap-2">
               <h3 className="fs-16 text-white text-extra-bold">
                 Let's find some podcast to follow
                 <span
@@ -73,7 +73,7 @@ const LeftSidebar: React.FC = () => {
                   Create playlist
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="bottom">
@@ -105,15 +105,18 @@ const LeftSidebar: React.FC = () => {
 
 const LeftStyles = styled.div`
   width: 420px;
+   position: sticky;
   height: 100vh;
-  position: sticky;
-  top: 0;
+  top:0;
+  /* overflow: auto; */
   padding: 5px 0;
   @media (max-width: 780px) {
     display: none;
   }
   .content {
-    min-height: 100%;
+    height: 100vh;
+   position: sticky;
+   top:0;
   }
   .center_top {
     padding: 0.7rem 0;
@@ -141,7 +144,7 @@ const LeftStyles = styled.div`
     width: 100%;
   }
   .center {
-    height: 80%;
+    height: 100%;
     position: relative;
     width: 100%;
     border-radius: 9px;
