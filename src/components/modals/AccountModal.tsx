@@ -9,43 +9,16 @@ import { AiOutlineCheck } from 'react-icons/ai'
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxtoolkit";
 import { BiSolidBadgeCheck } from "react-icons/bi";
 import Image from "next/image";
+import Link from "next/link";
 
 type modalType = {
-  modal?: boolean;
+  modal: boolean;
   id?: string;
-  setModal?: (val: boolean) => void;
+  setModal: (val: boolean) => void;
 }
 
 const AccountModal: React.FC<modalType> = ({ modal, setModal, id }) => {
   const dispatch = useAppDispatch()
-  const [colortab, setColorTab] = useState(0)
-  const [backgroundtab, setBackgroundTab] = useState(0)
-  const [color, setColor] = useState([
-    {
-      text: "blue-theme",
-      color: "var(--blue-1)"
-    },
-    {
-      text: "yellow-theme",
-      color: "#FFD400"
-    },
-    {
-      text: "pinkred-theme",
-      color: "#F91880"
-    },
-    {
-      text: "purple-theme",
-      color: "#7856FF"
-    },
-    {
-      text: "greyred-theme",
-      color: "#FF7A00"
-    },
-    {
-      text: "green-theme",
-      color: "#00BA7C"
-    }
-  ])
 
 
   return (
@@ -64,6 +37,8 @@ const AccountModal: React.FC<modalType> = ({ modal, setModal, id }) => {
         exit={"exit"}
         className={"deleteCard shadow gap-2"}
       >
+        <button onClick={()=> setModal(false)} className="btn btn-3 text-grey fs-15 text-extra-bold">Close</button>
+
         <div className="w-85 auto account_modal_wrapper">
           <div className="left w-100">
             <div className="w-100 image_wrappers">
@@ -86,9 +61,9 @@ const AccountModal: React.FC<modalType> = ({ modal, setModal, id }) => {
               <button className="btn btn-1 fs-15 text-extra-bold">Sign up free</button>
               <button className="btn btn-2 fs-15 text-white text-extra-bold">Download app</button>
             </div>
-            <h4 className="flex fs-14 item-center gap-2">
+            <h4 className="flex fs-12 item-center gap-1">
               <span className="text-grey text-bold">Already have an account</span>
-              <span className="text-white text-extra-bold">Log in</span>
+              <Link href={'/login'} className="text-white log text-extra-bold">Log in</Link>
             </h4>
           </div>
         </div>
@@ -110,6 +85,13 @@ const AccountModalStyles = styled(motion.div)`
   justify-content: center;
   top: 0;
   overflow: hidden;
+  .log{
+    transition: all .4s;
+    cursor:pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   .btn {
     &.btn-1 {
       background:var(--green) !important;
@@ -119,9 +101,36 @@ const AccountModalStyles = styled(motion.div)`
      padding:1.5rem 2rem;
      background:transparent;
     }
+     &.btn-3 {
+     padding:1.5rem 2rem;
+     background:transparent;
+     border:none;
+     color:#fff;
+     position: absolute;
+     bottom:-10%;
+     z-index: 2000;
+     
+     font-size: 14px;
+      @media (max-width:780px) {
+        bottom:2%;
+      }
+     &:hover {
+      color:#Fff;
+     }
+    }
   }
   .image_wrappers{
     /* height:30rem; */
+     @media (max-width:780px) {
+    width:40%;
+    margin:0 auto;
+
+        }
+        @media (max-width:580px) {
+    width:50%;
+    margin:0 auto;
+
+        }
     
     img {
       width:100%;
@@ -134,6 +143,10 @@ const AccountModalStyles = styled(motion.div)`
     grid-template-columns: 1fr 1fr;
     grid-gap:4rem;
     /* place-items:start; */
+    @media (max-width:780px) {
+    grid-template-columns: 1fr;
+
+    }
   }
   .card {
     padding: 1rem 2rem;
@@ -164,118 +177,20 @@ const AccountModalStyles = styled(motion.div)`
     }
     }
   }
-  .icons1 {
-     width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 50%;
-     &:hover {
-       background-color:rgba(207, 217, 222,.9);
-     }
 
-    &.icon2 {
-       &:hover {
-      background-color:#f9f9f90f;
-    }
-    }
-   
-    /* background-color: var(--dark-grey-hover); */
-    .icon_check {
-      border: 2px solid var(--grey-1);
-      width: 60%;
-      height: 60%;
-      border-radius: 50%;
-      &.active {
-        opacity: 1;
-        visibility: visible;
-        background-color: var(--blue-1);
-      border: none;
-
-        svg {
- opacity: 1;
-        visibility: visible;
-        }
-      }
-      svg {
-          width: 60%;
-      height: 60%;
-      opacity: 0;
-      visibility: hidden;
-      color: #fff;
-      transition: all .3s;
-      }
-    }
-  }
-  .card_color {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    cursor:pointer;
-    span {
-      opacity: 0;
-      visibility: hidden;
-      transition: all .3s;
-      &.active {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-  }
-  .top {
-    height: 595px;
-    overflow:auto;
-    border-radius: 20px;
-    padding: 2rem 0;
-  }
-  .tab_wrapper {
-    background-color: var(--grey-2);
-    padding:1.4rem;
-    border-radius: 13px;
-  }
-  .replyBtn {
-    padding:4px 10px;
-    border-radius:20px;
-    &:hover {
-      background:rgba(29, 155, 240, 0.1);
-    }
-  }
-   .replyBtn1 {
-    padding:2px 15px;
-    border-radius:20px;
-    border:1px solid rgba(0,0,0,.4);
-    &:hover {
-      background:rgba(29, 155, 240, 0.1);
-    }
-  }
-
-
-  .profile_background {
-    background-color: #B2B2B2;
-    height: 20rem;
-    position:relative;
-  }
-  .btn-3 {
-        padding: 1.4rem 2.5rem;
-        background-color: var(--blue-1) !important;
-  }
-  .icon {
-  }
-  .icons:hover {
-  background:rgba(29, 155, 240, 0.1) !important;
-  }
  
   .backdrop {
     background:rgba(0,0,0,.9);
-    z-index:200000;
+    z-index:20;
     position: absolute;
     height: 100%;
     width: 100%;
   }
   .deleteCard {
     max-width: 810px;
-  width: 810px;
+    width: 810px;
     display: flex;
     z-index:210000;
-    overflow: hidden;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -287,6 +202,16 @@ const AccountModalStyles = styled(motion.div)`
 
     position: relative;
     margin-top:2rem;
+    @media (max-width:980px) {
+      width:70%;
+      margin:0 auto;
+      /* height:100vh; */
+     }
+     @media (max-width:580px) {
+      width:100%;
+      height:100vh;
+      border-radius:none;
+     }
   }
    .image_wrapper {
       width:4.5rem;

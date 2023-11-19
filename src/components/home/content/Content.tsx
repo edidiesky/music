@@ -57,8 +57,12 @@ const data = [
     subtext: "Kick back to best new and recebt chill hits",
   },
 ];
-
-const Content: React.FC = () => {
+type modalType = {
+  modal: boolean;
+  id?: string;
+  setModal: (val: boolean) => void;
+}
+const Content: React.FC<modalType> = ({ modal, setModal, id }) => {
   return (
     <ContentStyles className="w-100 flex column gap-2">
       <div className="contentwrapper w-100">
@@ -128,7 +132,7 @@ const Content: React.FC = () => {
                       className="content_card w-100 relative flex column gap-2"
                     >
                       <div className="content_image_wrapper">
-                        <div className="playicon flex item-center justify-center">
+                        <div onClick={() => setModal(true)} className="playicon flex item-center justify-center">
                           <BsFillPlayFill
                             fontSize={"24px"}
                             color="var(--dark-1)"

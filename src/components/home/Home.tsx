@@ -7,7 +7,7 @@ import MyAnimatePresence from "../utils/AnimatePresence";
 import AccountModal from "../modals/AccountModal";
 
 const HomeIndex: React.FC = () => {
-  const [accountmodal, setAccountModal] = React.useState<boolean>(true)
+  const [accountmodal, setAccountModal] = React.useState<boolean>(false)
   return (
     <HomeWrapperStyles className="w-100 flex column gap-1">
 
@@ -20,7 +20,7 @@ const HomeIndex: React.FC = () => {
           <LeftSidebar />
           <div className="w-100">
             <div className="w-100">
-              <Content />
+              <Content modal={accountmodal} setModal={setAccountModal} />
             </div>
           </div> 
         </div>
