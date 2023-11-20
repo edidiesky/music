@@ -152,7 +152,8 @@ const ContentStyles = styled.div`
     backdrop-filter: blur(24px);
    }
    .content_center {
-    height: 100%;
+    height: 100vh;
+
 
     background-color: var(--dark-2);
    }

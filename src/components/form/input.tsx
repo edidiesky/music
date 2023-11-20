@@ -4,22 +4,19 @@ import { styled } from 'styled-components';
 
 type setStateProps<T> = React.Dispatch<React.SetStateAction<T>>
 
-type EditInputProps = {
-  types?: String
-}
 
-type EditFormProps = {
-  state?: String,
-  label?: String,
-  placeholder?: String,
-  setState?: setStateProps<String>
-}
-type FormInputProps = EditFormProps & EditInputProps
 
-const FormInput: React.FC<FormInputProps> = ({ types, state, setState, label,placeholder }) => {
+type EditInputTypes = {
+  state?: string;
+  label?: string;
+  placeholder?: string,
+  type?: string;
+  required?: boolean;
+  setState?: (val: string) => void;
+};
+
+const FormInput: React.FC<EditInputTypes> = ({ type, state, setState, label, placeholder }) => {
   const [name, setName] = useState('')
-
-  console.log(name)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (setState) {
@@ -29,7 +26,7 @@ const FormInput: React.FC<FormInputProps> = ({ types, state, setState, label,pla
 
   return (
     <LabelContainer
-      // htmlFor={label}
+    // htmlFor={label}
     >
       <div className="labelspan Capitalize">{label}</div>
       <input type="text"

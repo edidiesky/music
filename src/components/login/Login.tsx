@@ -5,6 +5,7 @@ import { FaFacebook } from "react-icons/fa6";
 import styled from 'styled-components';
 import FormInput from '../form/input';
 import Link from 'next/link';
+import Message from '../loaders/Message';
 const Login: React.FC = () => {
     const [auth, setAuth] = useState(false);
     const [email, setEmail] = useState('false');
@@ -15,15 +16,22 @@ const Login: React.FC = () => {
         <LoginStyles className="w-100 flex column gap-8">
             {/* <LeftSidebar /> */}
             <div className="top_wrapper w-100">
-                <div className="flex item-center w-100">
+                <Link href={'/'} className="flex item-center w-100">
                     <SpotifyIcon color='#fff' />
-                </div>
+                </Link>
             </div>
             <div className="bottom_wrapper ">
                 <div className=" flex column gap-4">
                     <h2 className="fs-40 text-extra-bold text-center text-white">
                         Log in to Spotify
                     </h2>
+                    {/* <div className="w-90 auto">
+                        <Message
+                            alertText='Hello an error did occur'
+                            alertType='danger'
+                            showAlert={true}
+                        />
+                    </div> */}
 
                     <div className="auto login_auth_form_wrapper btn_wrapper w-100 flex justify-center item-center column gap-1">
                         <div className="authbtn w-100 flex item-center justify-center gap-2 fs-14 text-extra-bold text-white auth_btn2">
