@@ -28,7 +28,7 @@ export const TableCard: React.FC<TableCardProps> = ({ music, type, index }) => {
                                     src={music?.image}
                                 />
                             </picture>
-                            <h4 className="text-white fs-15 text-bold">
+                            <h4 className="text-white fs-14 text-bold">
                                 <span>Shallow - Road Edit</span>
                                 <span className="text-grey fs-13 block">Lady Gaga, Bradley Cooper</span>
                             </h4>
