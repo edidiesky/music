@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from "next/image";
 import { BsSearch } from 'react-icons/bs'
+import { IoTimeOutline } from "react-icons/io5";
 import { BsFillPlayFill } from "react-icons/bs";
 import styled from 'styled-components';
 import { Footer } from "@/components/common/footer";
@@ -76,7 +77,7 @@ const Content: React.FC = () => {
                                                             <th># Title</th>
                                                             <th>Album</th>
                                                             <th>Date added</th>
-                                                            <th>Time</th>
+                                                            <th><IoTimeOutline fontSize={'18px'}/></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>

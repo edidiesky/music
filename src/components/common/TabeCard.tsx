@@ -36,10 +36,17 @@ export const TableCard: React.FC<TableCardProps> = ({ music, type, index }) => {
                     </div>
                 </td>
                 <td>
-                    <h4 className="fs-14 text-bold text-grey">A start is born today with over ....</h4>
+                    <h4 className="fs-13 text-bold text-grey">A start is born today with over ....</h4>
                 </td>
                 <td>
-                    <h4 className="fs-14 text-bold text-grey">1 hour ago.</h4>
+                    <h4 className="fs-13 text-bold text-grey">1 hour ago.</h4>
+
+                </td>
+
+                <td>
+                    <h4 className="fs-13 text-bold text-grey">
+                        <span>3:38</span>
+                    </h4>
 
                 </td>
             </tr>

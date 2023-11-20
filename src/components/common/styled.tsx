@@ -76,11 +76,12 @@ export const Table = styled.div`
       }
    
       tbody {
-      
+       border-radius:12px;
         tr {
           transition: all 0.5s var(--transition-2);
           z-index: 200;
         width:100%;
+         border-radius:12px;
 
           &:hover {
             background: hsla(0,0%,100%,.1);
@@ -89,13 +90,10 @@ export const Table = styled.div`
             font-size: 15px;
             font-weight: 400;
             text-align: start;
-            padding: 18px 10px;
+            padding: 12px 10px;
             min-width: 0;
-            /* flex: 1; */
             
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-
-           
           }
          
         }
