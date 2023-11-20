@@ -118,35 +118,7 @@ const ContentStyles = styled.div`
             transform:scale(1.15);
         }
       }
-    .search_form {
-        background-color: var(--grey-3);
-        border-radius: 6px;
-        height: 4.5rem;
-        width: 400px;
-        position: relative;
-        padding: 0 2.5rem;
-        
-        input {
-            border: none;
-          outline: none;
-          font-family: inherit;
-          font-size: 13px;
-          color: #fff;
-          background-color: transparent;
-          /* width: 100%; */
-          height: 100%;
-        border-radius: 6px;
-         
-
-          &::placeholder {
-          color: var(--grey-1);
-
-          }
-          /* &:hover {
-            border: 2px solid rgba(255,255,255,1);
-        } */
-        }
-    }
+   
     .icon_upload{
         width: 25rem;
         background-color: var(--grey-3) !important;
