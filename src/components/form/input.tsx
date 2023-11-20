@@ -51,8 +51,8 @@ const LabelContainer = styled.label`
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-  font-size: 1.2rem;
-  color: var(--dark-1);
+  font-size: 13px;
+  color: #fff;
   font-weight: 700;
   text-transform: capitalize;
 
@@ -60,29 +60,24 @@ const LabelContainer = styled.label`
 
   }
   input {
-    height: 5.5rem;
+    height: 55px;
     border-radius: 8px;
     background: transparent;
-    padding: 0 1.8rem;
+    padding: 0 18px;
     width: 100%;
     outline: none;
-    font-size: 1.4rem;
+    font-size: 14px;
     font-weight: normal;
     font-family: inherit;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.6);
 
-    color: var(--grey-3);
+    color: #fff;
 
     &:hover {
-      border: 1px solid rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+
     }
-    &:focus {
-      border: 2px solid rgba(0, 0, 0, 1);
-      background: transparent;
-    }
-    &.true {
-      background: #fff;
-    }
+    
     &.inputError {
       border: 2px solid var(--red);
     }

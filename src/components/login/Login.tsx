@@ -21,13 +21,18 @@ const Login: React.FC = () => {
             </div>
             <div className="bottom_wrapper ">
                 <div className=" flex column gap-4">
+                    <h2 className="fs-40 text-extra-bold text-center text-white">
+                        Log in to Spotify
+                    </h2>
 
-
-                    <div className="auto login_auth_form_wrapper btn_wrapper w-100 flex justify-center item-center column gap-4">
-                        <h2 className="fs-40 text-extra-bold text-start text-white">
-                            Sign up to start listening
-                        </h2>
-
+                    <div className="auto login_auth_form_wrapper btn_wrapper w-100 flex justify-center item-center column gap-1">
+                        <div className="authbtn w-100 flex item-center justify-center gap-2 fs-14 text-extra-bold text-white auth_btn2">
+                            <FaFacebook fontSize={'24px'} />
+                            Sign up with Facebook</div>
+                        <div className="authbtn  flex item-center justify-center gap-2 fs-14 text-extra-bold w-100 text-white text-grey">
+                            <FcGoogle fontSize={'24px'} />
+                            Sign up with Google</div>
+                        <div className="option fs-18"></div>
                         <div className="w-100 flex column gap-2">
                             <FormInput label={'whats your email?'} state={email} setState={setEmail} placeholder={'whats your email?'} />
                             <FormInput label={'Create a Password'} state={password} setState={setPassword} placeholder={'Create a password'} />
@@ -35,25 +40,11 @@ const Login: React.FC = () => {
                                 <div className="authbtn btn_3 text-center w-100 text-extra-bold">Sign Up</div>
                             </div>
                         </div>
-                        <div className="flex column w-100 gap-1">
-                            <div className="authbtn w-100 flex item-center justify-center gap-2 fs-14 text-extra-bold text-white auth_btn2">
-                                <FaFacebook fontSize={'24px'} />
-                                Sign up with Facebook</div>
-                            <div className="authbtn  flex item-center justify-center gap-2 fs-14 text-extra-bold w-100 text-white text-grey">
-                                <FcGoogle fontSize={'24px'} />
-                                Sign up with Google</div>
-                        </div>
                         <div className="option fs-18"></div>
-                        <div className="flex column gap-2">
-                            <h4 className="flex fs-14 justify-center item-center gap-1">
-                                <span className="text-grey text-bold">Don't have an account?</span>
-                                <Link href={'/login'} className="text-white log text-bold">Sign up for Spotify</Link>
-                            </h4>
-                            <h5 className="fs-10 text-light text-center">
-                                This site is protected by reCAPTCHA and the Google
-                                Privacy Policy and Terms of Service apply.
-                            </h5>
-                        </div>
+                        <h4 className="flex fs-14 item-center gap-1">
+                            <span className="text-grey text-bold">Don't have an account?</span>
+                            <Link href={'/auth'} className="text-white log text-bold">Sign up for Spotify</Link>
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -68,14 +59,11 @@ const LoginStyles = styled.div`
     min-height: 100vh;
     /* background-color: #fff; */
     background-image:linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgb(0, 0, 0) 100%);
-      padding-bottom: 3rem;
-
     .log{
     transition: all .4s;
     text-decoration: underline;
     color:var(--green);
     cursor:pointer;
-  
     &:hover {
       
     }
@@ -85,7 +73,10 @@ const LoginStyles = styled.div`
     }
 .top_wrapper{
     padding:30px 40px;
-        
+    background:#000000;
+     @media (max-width:780px) {
+       display:none;
+    }
 }
 .btn_wrapper {
 
@@ -105,7 +96,7 @@ const LoginStyles = styled.div`
                 padding:1.5rem 4rem;
                 background-color:#1ED760;
                 border:none;
-                margin: 10px auto;
+                margin: 30px auto;
                 }
                
                 
@@ -131,8 +122,9 @@ const LoginStyles = styled.div`
 .bottom_wrapper {
     max-width:734px;
         width:100%;
-    margin:0 auto;
-    padding:0 40px;
+    margin:50px auto;
+    padding:70px 40px;
+    background:#000000;
     border-radius:25px;
     @media (max-width:780px) {
         min-height:100vh;
