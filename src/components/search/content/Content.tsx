@@ -2,6 +2,8 @@
 import React from 'react';
 import { BsFillPlayFill, BsSearch } from 'react-icons/bs'
 import styled from 'styled-components';
+import { Footer } from "@/components/common/footer";
+
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 
@@ -40,49 +42,7 @@ const Content: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div style={{ background: "var(--dark-2)" }} className="w-100 ">
-                    <div className="w-90 auto footer_wrapper">
-                        <div className="flex column gap-2">
-                            <h4 className="fs-14 text-extra-bold">Communities</h4>
-                            <ul className="flex column gap-1 text-grey text-extra-bold fs-14">
-                                <li>About</li>
-                                <li>Jobs</li>
-                                <li>For the record</li>
-                            </ul>
-                        </div>
-                        <div className="flex column gap-2">
-                            <h4 className="fs-14 text-extra-bold">Company</h4>
-                            <ul className="flex column gap-2 text-grey text-extra-bold fs-14">
-                                <li>For Artists</li>
-                                <li>For Developers</li>
-                                <li>Advertising</li>
-                                <li>Investors</li>
-                                <li>Vendors</li>
-                                <li>Spotify for Work</li>
-                                <li>Advertising</li>
-                            </ul>
-                        </div>
-                        <div className="flex column gap-2">
-                            <h4 className="fs-14 text-extra-bold">Useful Links</h4>
-                            <ul className="flex column gap-1 text-grey text-extra-bold fs-14">
-                                <li>Support</li>
-                                <li>Free Mobile App</li>
-                            </ul>
-                        </div>
-                        <div className="flex item-start justify-end gap-2">
-                            <div className="icons icon2 flex item-center justify-center">
-                                <FaInstagram fontSize={'20px'} />
-                            </div><div className="icons icon2 flex item-center justify-center">
-                                <FaTwitter fontSize={'20px'} />
-                            </div><div className="icons icon2 flex item-center justify-center">
-                                <FaFacebook fontSize={'20px'} />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="w-90 auto fs-14 text-grey text-light">
-                        @2023 Spotify EddyCodeVerse
-                    </div>
-                </div>
+                <Footer/>
             </div>
         </ContentStyles>
     )

@@ -4,59 +4,9 @@ import { BsFillPlayFill } from "react-icons/bs";
 import styled from "styled-components";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-const data = [
-  {
-    image: "https://i.scdn.co/image/ab67706f00000002d6d48b11fd3b11da654c3519",
-    text: "Deep Focus",
-    subtext: "Keep calm and docus with ambient and post-rock music",
-  },
-  {
-    image: "https://i.scdn.co/image/ab67706f00000002d073e656e546e43bc387ad79",
-    text: "Peaceful Piano",
-    subtext: "Peaceful Piano to help you breathe and slow down",
-  },
-  {
-    image: "https://i.scdn.co/image/ab67706f00000002fe24d7084be472288cd6ee6c",
-    text: "Instrumental Study",
-    subtext: "Focus with soft study music",
-  },
-  {
-    image: "https://i.scdn.co/image/ab67706f00000002724554ed6bed6f051d9b0bfc",
-    text: "Focus flow",
-    subtext: "Uptempo hippop beats",
-  },
-  {
-    image: "https://i.scdn.co/image/ab67706f00000002e435ce0a86a8b9dc24527618",
-    text: "Workday Lounge",
-    subtext: "Lounge and chill out music for your day",
-  },
+import { data } from "@/data";
+import { Footer } from "@/components/common/footer";
 
-  {
-    image: "https://i.scdn.co/image/ab67706f00000002abc47d0e6b0ef634816633d6",
-    text: "Today top Hits",
-    subtext: "Billie Ellish is on top of the charts of the top 50",
-  },
-  {
-    image: "https://i.scdn.co/image/ab67706f000000025addec7662cf3ec3d4519d76",
-    text: "Reap Caviar",
-    subtext: "New Music form Lil Tjay, Quavo and Jt",
-  },
-  {
-    image: "https://i.scdn.co/image/ab67706f00000002b0fe40a6e1692822f5a9d8f1",
-    text: "All Out 2010s",
-    subtext: "The biggest sons of the 2010s.",
-  },
-  {
-    image: "https://i.scdn.co/image/ab67706f0000000278b4745cb9ce8ffe32daaf7e",
-    text: "Rock Classics",
-    subtext: "Rock Legends & epic songs that continue to inspire",
-  },
-  {
-    image: "https://i.scdn.co/image/ab67706f00000002e435ce0a86a8b9dc24527618",
-    text: "Chill Hits",
-    subtext: "Kick back to best new and recebt chill hits",
-  },
-];
 type modalType = {
   modal: boolean;
   id?: string;
@@ -81,51 +31,13 @@ const Content: React.FC<modalType> = ({ modal, setModal, id }) => {
             </div>
           </div>
         </div>
-        {/* <div className="flex w-100 column gap-2">
-          <div className="content_center flex column gap-2">
-            <div className="w-90 auto py-2 flex column gap-2">
-              <h3 className="fs-24 text-extra-bold">Focus</h3>
-              <div className="w-100 grid grid_wrapper">
-                {data.slice(0, 5).map((x, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="content_card w-100 relative flex column gap-2"
-                    >
-                      <div className="content_image_wrapper">
-                        <img src={x?.image} alt="" className="w-100 h-100" />
-                        <div className="playicon flex item-center justify-center">
-                          <BsFillPlayFill
-                            fontSize={"24px"}
-                            color="var(--dark-1)"
-                          />
-                        </div>
-                      </div>
-                      <h4
-                        style={{ fontSize: "14px" }}
-                        className="w-100 text-extra-bold"
-                      >
-                        {x.text}
-                        <span
-                          style={{ fontSize: "13px", marginTop: "7px" }}
-                          className="block subtext text-bold text-grey"
-                        >
-                          {x.subtext.substring(0, 34)}...
-                        </span>
-                      </h4>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div> */}
+       
         <div className="flex w-100 column gap-2">
           <div className="content_center flex column gap-2">
             <div className="w-90 auto py-2 flex column gap-2">
               <h3 className="fs-24 text-extra-bold">Spotify Playlists</h3>
               <div className="w-100 grid grid_wrapper">
-                {data.slice(5, 11).map((x, index) => {
+                {data.slice(5, 11).map((x?:any, index?:any) => {
                   return (
                     <div
                       key={index}
@@ -159,49 +71,7 @@ const Content: React.FC<modalType> = ({ modal, setModal, id }) => {
             </div>
           </div>
         </div>
-        <div style={{ background: "var(--dark-2)" }} className="w-100 ">
-          <div className="w-90 auto footer_wrapper">
-            <div className="flex column gap-2">
-              <h4 className="fs-14 text-extra-bold">Communities</h4>
-              <ul className="flex column gap-1 text-grey text-bold fs-14">
-                <li>About</li>
-                <li>Jobs</li>
-                <li>For the record</li>
-              </ul>
-            </div>
-            <div className="flex column gap-2">
-              <h4 className="fs-14 text-extra-bold">Company</h4>
-              <ul className="flex column gap-1 text-grey text-bold fs-14">
-                <li>For Artists</li>
-                <li>For Developers</li>
-                <li>Advertising</li>
-                <li>Investors</li>
-                <li>Vendors</li>
-              </ul>
-            </div>
-            <div className="flex column gap-2">
-              <h4 className="fs-14 text-extra-bold">Useful Links</h4>
-              <ul className="flex column gap-1 text-grey text-bold fs-14">
-                <li>Support</li>
-                <li>Free Mobile App</li>
-              </ul>
-            </div>
-            <div className="flex item-start justify-end gap-2">
-              <div className="icons icon2 flex item-center justify-center">
-                <FaInstagram fontSize={"20px"} />
-              </div>
-              <div className="icons icon2 flex item-center justify-center">
-                <FaTwitter fontSize={"20px"} />
-              </div>
-              <div className="icons icon2 flex item-center justify-center">
-                <FaFacebook fontSize={"20px"} />
-              </div>
-            </div>
-          </div>
-          <div className="w-90 auto fs-14 text-grey text-light">
-            @2023 Spotify EddyCodeVerse
-          </div>
-        </div>
+        <Footer/>
       </div>
     </ContentStyles>
   );

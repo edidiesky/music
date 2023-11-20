@@ -1,7 +1,11 @@
 
 import React from 'react';
-import { BsFillPlayFill, BsSearch } from 'react-icons/bs'
+import Image from "next/image";
+import { BsSearch } from 'react-icons/bs'
+import { BsFillPlayFill } from "react-icons/bs";
 import styled from 'styled-components';
+import { Footer } from "@/components/common/footer";
+
 import { FiChevronRight, FiChevronLeft, FiMusic } from 'react-icons/fi'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 
@@ -9,7 +13,7 @@ const Content: React.FC = () => {
     return (
         <ContentStyles className="w-100 flex column gap-2">
             <div className="contentwrapper w-100">
-                <div style={{ backgroundColor: "rgba(83,83,83)" }} className="content_top flex column gap-2 w-100">
+                <div className="content_top flex column gap-2 w-100">
                     <div className="w-90 auto flex item-center justify-space">
                         <div className="flex item-center gap-1">
                             <div className="flex item-center gap-1">
@@ -28,12 +32,22 @@ const Content: React.FC = () => {
                     </div>
                     <div className="w-90 auto flex item-center gap-2">
                         <div className="icon_upload shadow flex item-center justify-center">
-                            <FiMusic fontSize={'40px'} />
+                            <picture className="w-full w-100 h-100">
+                                <Image
+                                    style={{ width: "100%", height:"100%" }}
+                                    className="sm:w-9/12"
+                                    alt="Liked-Image"
+                                    width={0}
+                                    sizes="100vw"
+                                    height={0}
+                                    loading="lazy"
+                                    src='https://misc.scdn.co/liked-songs/liked-songs-640.png' />
+                            </picture>
                         </div>
                         <h1 className="text-extra-bold text-white fs-50">
                             <span className="block fs-14">Playlists</span>
 
-                            My Playlists #1
+                            Liked Songs
                             <span className="block fs-14">Edidiong Essien</span>
                         </h1>
                     </div>
@@ -42,7 +56,12 @@ const Content: React.FC = () => {
 
                     <div className="content_center flex column gap-2">
                         <div className="w-90 auto py-2 flex column gap-4">
-                            <h3 className="fs-24 text-extra-bold">Focus</h3>
+                            <div className="playicon flex item-center justify-center">
+                                <BsFillPlayFill
+                                    fontSize={"3rem"}
+                                    color="var(--dark-1)"
+                                />
+                            </div>
                             <div className="search flex item-center justify-space w-100">
                                 <div className="flex column gap-2 fs-18 text-extra-bold">
                                     <h3>Let's find something for your playlist</h3>
@@ -57,49 +76,7 @@ const Content: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div style={{ background: "var(--dark-2)" }} className="w-100 ">
-                    <div className="w-90 auto footer_wrapper">
-                        <div className="flex column gap-2">
-                            <h4 className="fs-14 text-extra-bold">Communities</h4>
-                            <ul className="flex column gap-1 text-grey text-extra-bold fs-14">
-                                <li>About</li>
-                                <li>Jobs</li>
-                                <li>For the record</li>
-                            </ul>
-                        </div>
-                        <div className="flex column gap-2">
-                            <h4 className="fs-14 text-extra-bold">Company</h4>
-                            <ul className="flex column gap-2 text-grey text-extra-bold fs-14">
-                                <li>For Artists</li>
-                                <li>For Developers</li>
-                                <li>Advertising</li>
-                                <li>Investors</li>
-                                <li>Vendors</li>
-                                <li>Spotify for Work</li>
-                                <li>Advertising</li>
-                            </ul>
-                        </div>
-                        <div className="flex column gap-2">
-                            <h4 className="fs-14 text-extra-bold">Useful Links</h4>
-                            <ul className="flex column gap-1 text-grey text-extra-bold fs-14">
-                                <li>Support</li>
-                                <li>Free Mobile App</li>
-                            </ul>
-                        </div>
-                        <div className="flex item-start justify-end gap-2">
-                            <div className="icons icon2 flex item-center justify-center">
-                                <FaInstagram fontSize={'20px'} />
-                            </div><div className="icons icon2 flex item-center justify-center">
-                                <FaTwitter fontSize={'20px'} />
-                            </div><div className="icons icon2 flex item-center justify-center">
-                                <FaFacebook fontSize={'20px'} />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="w-90 auto fs-14 text-grey text-light">
-                        @2023 Spotify EddyCodeVerse
-                    </div>
-                </div>
+                <Footer/>
             </div>
         </ContentStyles>
     )
@@ -109,6 +86,16 @@ const ContentStyles = styled.div`
     width: 99%;
     margin: 0 auto;
     padding: .5rem 0;
+    .playicon {
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+       
+        border-radius: 50%;
+        width: 6rem;
+        height: 6rem;
+        background: var(--green);
+        z-index: 30;
+        cursor: pointer;
+      }
     .search_form {
         background-color: var(--grey-3);
         border-radius: 6px;
@@ -188,15 +175,16 @@ const ContentStyles = styled.div`
     }
    .content_top {
     padding: 2rem 0;
+    background-color: rgb(80, 56, 160);
     background-image:linear-gradient(transparent 0,rgba(0,0,0,.5) 100%),url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=);;
    
 }
    .content_center {
     height: 100%;
+    background-color: rgb(80, 56, 160);
     min-height: 20rem;
-    background-image:linear-gradient(transparent 0,rgba(0,0,0,.5) 100%),url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=);;
-    /* background-color: rgb(83, 83, 83); */
-   }
+    background-image:linear-gradient(rgba(0,0,0,.6) 0,#121212 100%),url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=");
+}
     .contentwrapper{
         @media (min-width:780px) {
         height: 100vh;
