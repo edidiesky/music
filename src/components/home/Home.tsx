@@ -22,7 +22,7 @@ const HomeIndex: React.FC = () => {
             <div className="w-100">
               <Content modal={accountmodal} setModal={setAccountModal} />
             </div>
-          </div> 
+          </div>
         </div>
         {/* <LeftSidebar />
         <div className="w-100">
@@ -32,22 +32,7 @@ const HomeIndex: React.FC = () => {
         </div> */}
         {/* <LeftSidebar /> */}
       </HomeStyles>
-      <div className="w-100">
-        <div className="w-100 auth_footer flex item-center">
-          <div className="w-90 auto flex item-center justify-space">
-            <h4 className="fs-14 text-light text-white">
-              <span className="block uppercase fs-14">PREVIEW OF SPOTIFY</span>
-              <span className="text-bold py-1">
-                Sign up to get unlimited songs and podcast width occasional ads.
-                No credit card needed
-              </span>
-            </h4>
-            <div className="flex item-center gap-1 justify-end">
-              <div className="btn fs-14 text-dark text-extra-bold">Sign Up Free</div>
-            </div>
-          </div>
-        </div>
-      </div>
+     
     </HomeWrapperStyles>
   );
 };
