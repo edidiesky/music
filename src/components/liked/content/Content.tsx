@@ -8,6 +8,9 @@ import { Footer } from "@/components/common/footer";
 
 import { FiChevronRight, FiChevronLeft, FiMusic } from 'react-icons/fi'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { data } from '@/data';
+import { TableCard } from '@/components/common/TabeCard';
+import { Table } from '@/components/common/styled';
 
 const Content: React.FC = () => {
     return (
@@ -63,14 +66,28 @@ const Content: React.FC = () => {
                                 />
                             </div>
                             <div className="search flex item-center justify-space w-100">
-                                <div className="flex column gap-2 fs-18 text-extra-bold">
-                                    <h3>Let's find something for your playlist</h3>
-                                    <div className="search_form flex item-center gap-2">
-                                        <div className=""> <div className="icons1 flex item-center justify-center">
-                                            <BsSearch fontSize={'18px'} />
-                                        </div></div>
-                                        <input type="text" className='flex-1' placeholder='what do you want to listen to' />
-                                    </div>
+                                <div className="w-100">
+                                    {data?.length > 0 && (
+                                        <Table>
+                                            <div className="TableContainer">
+                                                <table className="tableWrapper">
+                                                    <thead>
+                                                        <tr>
+                                                            <th># Title</th>
+                                                            <th>Album</th>
+                                                            <th>Date added</th>
+                                                            <th>Time</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {data?.slice(0,2).map((music?:any, index?:any) => {
+                                                            return <TableCard music={music} index={index} />;
+                                                        })}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </Table>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -95,6 +112,10 @@ const ContentStyles = styled.div`
         background: var(--green);
         z-index: 30;
         cursor: pointer;
+        transition:all .4s;
+        &:hover {
+            transform:scale(1.15);
+        }
       }
     .search_form {
         background-color: var(--grey-3);
@@ -149,10 +170,6 @@ const ContentStyles = styled.div`
             font-size: 40px;
 
             }
-    }
-    .search {
-        padding: 2rem 0;
-        border-top: 1px solid rgba(255,255,255,.1);
     }
 
     .icons1 {
