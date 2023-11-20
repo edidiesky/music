@@ -5,58 +5,58 @@ import LeftSidebar from "../common/leftsidebar";
 import Content from "./content/Content";
 import MyAnimatePresence from "../utils/AnimatePresence";
 import AccountModal from "../modals/AccountModal";
+import { Bottom } from "../common/Bottom";
 
 const HomeIndex: React.FC = () => {
   const [accountmodal, setAccountModal] = React.useState<boolean>(false)
   return (
-    <HomeWrapperStyles className="w-100 flex column gap-1">
+    <div className="w-100 flex column gap-1">
 
       <MyAnimatePresence
       >
         {accountmodal && <AccountModal modal={accountmodal} setModal={setAccountModal} />}
       </MyAnimatePresence>
-      <HomeStyles className="w-100">
-        <div className="home_wrapper w-100">
+      <HomeStyles className="w-100 flex column gap-2">
+        <div className="home_wrapper flex w-100">
           <LeftSidebar />
           <div className="w-100">
-            <div className="w-100">
+            <div className="w-100 home_content">
               <Content modal={accountmodal} setModal={setAccountModal} />
             </div>
           </div>
         </div>
-        {/* <LeftSidebar />
-        <div className="w-100">
-          <div className="w-100">
-            <Content />
-          </div>
-        </div> */}
-        {/* <LeftSidebar /> */}
+        <div className="w-100 bottomWrapper">
+          <Bottom />
+        </div>
       </HomeStyles>
-     
-    </HomeWrapperStyles>
+
+    </div>
   );
 };
 
 const HomeStyles = styled.div`
-  width: 100%;
-  display: flex;
-  gap: 2px;
-  align-items: flex-start;
-  height: 100vh;
-  /* background: red; */
-  overflow: auto;
-  /* height: 100vh; */
-  .home_wrapper{
-  /* overflow: hidden; */
-    height:100%;
-  /* overflow: auto; */
-  display: flex;
-  gap: 2px;
-  align-items: flex-start;
-  }
-  @media (max-width: 780px) {
-    flex-direction: column-reverse;
-  }
+    width: 100%;
+    display:flex;
+    gap:2px;
+    height:100vh;
+    overflow:hidden;
+     .home_wrapper{
+        height:auto;
+        align-items: flex-start;
+        @media (min-width:780px) {
+        overflow: hidden;
+        }
+        .home_content{
+            height:100%;
+            overflow:auto;
+             @media (max-width:780px) {
+       min-height:100vh;
+        }
+        }
+        @media (max-width:780px) {
+        flex-direction: column-reverse;
+        }
+    }
 `;
 
 const HomeWrapperStyles = styled.div`

@@ -8,6 +8,7 @@ import { TbWorld } from "react-icons/tb";
 import { VscLibrary } from "react-icons/vsc";
 import { FiPlus } from "react-icons/fi";
 import { BiSearch } from "react-icons/bi";
+import Link from "next/link";
 
 const options = [
   "Legacy",
@@ -25,14 +26,14 @@ const LeftSidebar: React.FC = () => {
     <LeftStyles className="w-100">
       <div className="w-90 content auto h-100 flex column gap-1">
         <div className="top flex column gap-2">
-          <div className="flex fs-16 text-extra-bold text-white item-center gap-2">
+          <Link href='/' className="flex fs-16 text-extra-bold text-white item-center gap-2">
             <GoHomeFill fontSize={"24px"} />
             Home
-          </div>{" "}
-          <div className="flex fs-16 text-extra-bold text-grey item-center gap-2">
+          </Link>{" "}
+          <Link href='/search' className="flex fs-16 text-extra-bold text-grey item-center gap-2">
             <FiSearch fontSize={"24px"} />
             Search
-          </div>
+          </Link>
         </div>
 
         <div className="center w-100">
@@ -59,7 +60,7 @@ const LeftSidebar: React.FC = () => {
                   </div>
                   <div className="w-100 flex column">
                     <div className="music_tab w-100 flex item-center gap-1">
-                      <picture style={{width:'5rem', height:"5rem"}}>
+                      <picture style={{ width: '5rem', height: "5rem" }}>
                         <Image
                           style={{ width: "100%", height: "100%" }}
                           className="sm:w-9/12"
@@ -70,7 +71,7 @@ const LeftSidebar: React.FC = () => {
                           loading="lazy"
                           src='https://misc.scdn.co/liked-songs/liked-songs-64.png' />
                       </picture>
-                      <h4 style={{gap:"5px"}} className="fs-16 text-extra-bold flex column text-white">
+                      <h4 style={{ gap: "5px" }} className="fs-16 text-extra-bold flex column text-white">
                         Liked Songs
                         <span className="block flex item-center text-bold text-grey gap-1 fs-13">
                           <AiFillPushpin fontSize={'16px'} color={'var(--green)'} /> <span>Playlist</span> <span>.</span> <span>1 songs</span>
@@ -93,7 +94,7 @@ const LeftSidebar: React.FC = () => {
                       <h4 style={{ gap: "5px" }} className="fs-16 text-extra-bold flex column text-white">
                         My Playlists #1
                         <span className="block flex item-center text-bold text-grey gap-1 fs-13">
-                           <span>Playlist</span> <span>.</span> <span>Edidiong Essien</span>
+                          <span>Playlist</span> <span>.</span> <span>Edidiong Essien</span>
                         </span>
                       </h4>
                     </div>
