@@ -35,10 +35,10 @@ const LikedMusicStyles = styled.div`
     height:100vh;
     overflow:hidden;
     .bottomWrapper {
-        height:15%;
+        height:100px;
     }
     .likeMusicWwrapper{
-        height:85%;
+        height:auto;
         align-items: flex-start;
         @media (min-width:780px) {
         overflow: hidden;

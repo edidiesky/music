@@ -2,8 +2,15 @@ import { useAppSelector } from "@/hooks/reduxtoolkit"
 import React from "react"
 import { IoPlaySkipBackSharp, IoPlaySkipForward, IoPlaySharp } from "react-icons/io5";
 import Image from "next/image";
+import { BsFillPlayFill } from "react-icons/bs";
+
 
 import styled from "styled-components"
+import SyncIcon from "@/assets/svg/sync";
+import MicIcon_0 from "@/assets/svg/mic-0";
+import MicIcon_1 from "@/assets/svg/mic-1";
+import MicIcon_2 from "@/assets/svg/mic-2";
+import MicIcon from "@/assets/svg/mic";
 
 type BottomTypeProps = {
     type?: string
@@ -18,7 +25,7 @@ export const Bottom: React.FC<BottomTypeProps> = ({ type }) => {
                     <div className="flex left item-center gap-1">
                         <picture className="">
                             <Image
-                                style={{ width: "6rem", height: "7rem" }}
+                                style={{ width: "6rem", height: "6rem" }}
                                 className="sm:w-9/12"
                                 alt="Liked-Image"
                                 width={0}
@@ -28,15 +35,31 @@ export const Bottom: React.FC<BottomTypeProps> = ({ type }) => {
                                 src={'https://i.scdn.co/image/ab67706f00000002d6d48b11fd3b11da654c3519'}
                             />
                         </picture>
-                        <h4 className="fs-15 text-bold">
+                        <h4 className="fs-14 text-bold">
                             <span className="block">I am a Survivor</span>
                             <span className="text-grey fs-12 text-light">Reba McEntire</span>
                         </h4>
                     </div>
-                    <div className="flex center flex-1 item-center gap-1">
-
+                    <div className="flex center justify-center flex-1 column item-center gap-1">
+                        <div className="flex item-center justify-center w-100 gap-2">
+                            <SyncIcon/>
+                            <IoPlaySkipBackSharp fontSize={'24px'} />
+                            <div className="playicon flex item-center justify-center">
+                                <BsFillPlayFill
+                                    fontSize={"3rem"}
+                                    color="var(--dark-1)"
+                                />
+                            </div>
+                            <IoPlaySkipForward fontSize={'24px'} />
+                        </div>
                     </div>
-                    <div className="flex right item-center gap-1"></div>
+                    <div className="flex  right item-center gap-2">
+                        <MicIcon_0 />
+                        <MicIcon_1 />
+                        <MicIcon_2 />
+                        <MicIcon />
+                        <MicIcon_0/>
+                    </div>
                 </div>
             </div>
             {/* {
@@ -67,6 +90,21 @@ export const Bottom: React.FC<BottomTypeProps> = ({ type }) => {
 
 const BottomWrapperStyles = styled.div`
 padding:0 20px;
+height:100%;
+ .playicon {
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+       
+        border-radius: 50%;
+        width: 4.5rem;
+        height: 4.5rem;
+        background:#fff;
+        z-index: 30;
+        cursor: pointer;
+        transition:all .4s;
+        &:hover {
+            transform:scale(1.15);
+        }
+      }
   .auth_footer {
     background: linear-gradient(90deg, #af2896, #509bf5);
     padding: 1rem 0;
