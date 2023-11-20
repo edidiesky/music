@@ -106,17 +106,15 @@ const LeftSidebar: React.FC = () => {
 const LeftStyles = styled.div`
   width: 420px;
    position: sticky;
-  height: 100vh;
-  top:0;
+  height: 100%;
+  top:0%;
   /* overflow: auto; */
   padding: 5px 0;
   @media (max-width: 780px) {
     display: none;
   }
   .content {
-    height: 100vh;
-   position: sticky;
-   top:0;
+    height: 100%;
   }
   .center_top {
     padding: 0.7rem 0;
