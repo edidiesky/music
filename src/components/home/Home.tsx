@@ -59,14 +59,4 @@ const HomeStyles = styled.div`
     }
 `;
 
-const HomeWrapperStyles = styled.div`
-  height: 100vh;
-  overflow: auto;
-  /* overflow: hidden; */
-
-  .auth_footer {
-    background: linear-gradient(90deg, #af2896, #509bf5);
-    padding: 1rem 0;
-  }
-`;
 export default HomeIndex;

@@ -1,10 +1,11 @@
+
+"use client"
 import { useAppSelector } from "@/hooks/reduxtoolkit"
 import React from "react"
 import { IoPlaySkipBackSharp, IoPlaySkipForward, IoPlaySharp } from "react-icons/io5";
 import Image from "next/image";
 import { BsFillPlayFill } from "react-icons/bs";
-
-
+import { HiSpeakerXMark, HiSpeakerWave } from "react-icons/hi2";   
 import styled from "styled-components"
 import SyncIcon from "@/assets/svg/sync";
 import MicIcon_0 from "@/assets/svg/mic-0";
@@ -53,12 +54,14 @@ export const Bottom: React.FC<BottomTypeProps> = ({ type }) => {
                             <IoPlaySkipForward fontSize={'24px'} />
                         </div>
                     </div>
-                    <div className="flex  right item-center gap-2">
+                    <div style={{gap:"1.4rem"}} className="flex  right item-center">
                         <MicIcon_0 />
                         <MicIcon_1 />
                         <MicIcon_2 />
                         <MicIcon />
                         <MicIcon_0/>
+
+                        <HiSpeakerXMark fontSize={'18px'} color={'var(--grey-1)'}/>
                     </div>
                 </div>
             </div>

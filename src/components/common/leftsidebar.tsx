@@ -1,3 +1,5 @@
+
+"use client"
 import React from "react";
 import Image from "next/image";
 import { AiFillPushpin } from "react-icons/ai";
@@ -59,7 +61,7 @@ const LeftSidebar: React.FC = () => {
 
                   </div>
                   <div className="w-100 flex column">
-                    <div className="music_tab w-100 flex item-center gap-1">
+                    <Link href='/collection/tracks' className="music_tab w-100 flex item-center gap-1">
                       <picture style={{ width: '5rem', height: "5rem" }}>
                         <Image
                           style={{ width: "100%", height: "100%" }}
@@ -77,9 +79,9 @@ const LeftSidebar: React.FC = () => {
                           <AiFillPushpin fontSize={'16px'} color={'var(--green)'} /> <span>Playlist</span> <span>.</span> <span>1 songs</span>
                         </span>
                       </h4>
-                    </div>
+                    </Link>
 
-                    <div className="music_tab w-100 flex item-center gap-1">
+                    <Link href='/playlists/tracks' className="music_tab w-100 flex item-center gap-1">
                       <picture style={{ width: '5rem', height: "5rem" }}>
                         <Image
                           style={{ width: "100%", height: "100%" }}
@@ -97,7 +99,7 @@ const LeftSidebar: React.FC = () => {
                           <span>Playlist</span> <span>.</span> <span>Edidiong Essien</span>
                         </span>
                       </h4>
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div> : <div className="center_content w-100 flex column gap-2">
