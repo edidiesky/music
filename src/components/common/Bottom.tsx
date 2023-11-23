@@ -12,6 +12,7 @@ import MicIcon_0 from "@/assets/svg/mic-0";
 import MicIcon_1 from "@/assets/svg/mic-1";
 import MicIcon_2 from "@/assets/svg/mic-2";
 import MicIcon from "@/assets/svg/mic";
+import { Slider } from "./Slider";
 
 type BottomTypeProps = {
     type?: string
@@ -61,7 +62,12 @@ export const Bottom: React.FC<BottomTypeProps> = ({ type }) => {
                         <MicIcon />
                         <MicIcon_0/>
 
-                        <HiSpeakerXMark fontSize={'18px'} color={'var(--grey-1)'}/>
+                       <div className="flex flex-1 item-center">
+                            <div className="icons flex item-center justify-center">
+                                <HiSpeakerXMark style={{ width: "1.6rem", height: "1.6rem" }} fontSize={'24px'} color={'var(--grey-1)'} />
+                            </div>
+                            <Slider value={10} />
+                       </div>
                     </div>
                 </div>
             </div>
